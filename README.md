@@ -59,3 +59,23 @@ To run the tests in the provided script and perform an ATT&CK assessment on Azur
 - Permission to list users (`az ad user list`), which usually requires a role that has read access to Azure Active Directory users.
 
 It's important to note that granting these permissions should be done carefully and following the principle of least privilege. Only grant the necessary permissions for the specific tasks and users performing the security assessment. Additionally, make sure to follow best practices and security guidelines when configuring permissions in Azure to avoid potential security risks.
+
+# Prerequires
+Based on the script, the following tools or requirements might be needed:
+
+**For Azure CLI**:
+- The Azure Command-Line Interface (`az`) should be installed and configured. This is used for interacting with Azure resources.
+
+**For Linux VMs**:
+- `auditctl` might need to be installed if not already present. This is used for auditing activities on the VM.
+- `crontab` is used for checking scheduled tasks. Ensure it's available or properly configured.
+- Utilities for file inspection and searching like `find` and `grep`.
+- If checking for vulnerable packages, a script called `check_for_vulnerable_packages.sh` needs to be created. This might require package management tools specific to the OS (e.g., `apt-get` for Debian-based systems).
+
+**For Network Scanning**:
+- `nmap` is used for checking for open ports and vulnerable services. Make sure it's installed on the machine running the script or accessible on the VMs if needed.
+
+**For General Usage**:
+- A text editor or development environment to modify and run the script.
+
+It's important to note that depending on the specific environment and requirements, additional tools or configurations might be necessary. Also, make sure to follow proper installation and usage guidelines for each tool and ensure that you have the necessary permissions to run these tools on the target systems.
